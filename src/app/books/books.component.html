@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .btn {
+          
+          width: 100%;
+          border: 1;
+          background-color: #ccf5ff;
+          color: #006680;
+          padding: 12px 28px;
+          font-size: 16px;
+          cursor: pointer;
+          text-align: center;
+        }
+        .btn:hover {
+        background-color: white;}
+        </style>
+</head>
+
+<body style="background-image: linear-gradient(#e6ffff, #ffffff, #e6ffff);">
+
+<h2 style="color:#008ae6;" style="text-align:center; ">Books List</h2>
+<ul class="books">
+  <li  *ngFor="let books of books">
+    <button class="btn" [class.selected]="books === selectedbook" type="button" (click)="onSelect(books)">
+      <span style="color:blue;">{{books.itemId}}</span> &nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="name">{{books.name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span>price: </span>{{books.price}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <span>qty: </span>{{books.qty}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
+      
+    </button>
+  </li>
+</ul>
+
+<app-book-detail [books]="selectedbook"></app-book-detail>
+
+</body>
+<!--
+    <div *ngIf="selectedbook">
+<h2>{{selectedbook.name | uppercase}} Details</h2>
+<div>id: {{selectedbook.itemId}}</div>
+-->
+
+<!--
+<div><span>itemId: </span>{{books.itemId}}</div>
+<div><span>name: </span>{{books.name}}</div>
+<div><span>price: </span>{{books.price}}</div>
+<div><span>qty: </span>{{books.qty}}</div>
+-->
+
+<!--Two-way binding
+
+<div>
+    <label for="itemId">itemId: </label>
+    <input itemId="itemId" [(ngModel)]="selectedbook.itemId" placeholder="itemId">
+  </div>
+</div>
+
+-->

@@ -1,0 +1,10 @@
+<div *ngIf="books">
+
+    <h2>{{books.name | uppercase}} Details</h2>
+    <div><span>Item id: </span>{{books.itemId}}</div>
+    <div>
+      <label for="books-qty">Available Qty: </label>
+      <input itemId="books-qty" [(ngModel)]="books.qty" placeholder="qty">
+    </div>
+  
+  </div>
